@@ -1,4 +1,4 @@
-package ej6;
+package ej8;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Cliente {
-    static final int PUERTO = 5056;
+public class Cliente98 {
+    static final int PUERTO = 9998;
     static final String HOST = "localhost";
 
     public static void main(String[] args) {
@@ -16,10 +16,10 @@ public class Cliente {
             Scanner sc = new Scanner(System.in);
             Socket socket;
             do {
-                socket = new Socket(HOST, PUERTO);
-                DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
                 System.out.print("Introduce una cadena: ");
                 String textoOut = sc.nextLine();
+                socket = new Socket(HOST, PUERTO);
+                DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
                 dataOutputStream.writeUTF(textoOut);
 
 
